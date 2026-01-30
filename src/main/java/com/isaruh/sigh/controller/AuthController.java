@@ -19,7 +19,7 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<?> register(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<?> loginHandler(@RequestBody UserRequest userRequest) {
         User user = userService.create(userRequest);
         return ResponseUtil.buildSingleResponse(
                 HttpStatus.CREATED,
